@@ -11,6 +11,7 @@ import java.util.Set;
 
 public interface BookRepository extends JpaRepository<Book, String> {
 
+    Optional<Book> findByIsbn(String isbn);
 
     @Query("SELECT b.isbn FROM Book b JOIN b.categories c WHERE c.name IN :categories GROUP BY b.isbn HAVING COUNT(DISTINCT c.name) >= :categoryCount")
     Set<String> findIsbnsByCategories(@Param("categories") Set<String> categories, @Param("categoryCount") long categoryCount);
