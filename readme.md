@@ -5,7 +5,10 @@
 * Hibernate
 ## Requirments
 * Store command
+  * Add a new book with a unique 13-digit ISBN
 * Search Command
+  *  Retrieves books that contain all specified tags.
+  * Need to be optimized for large Datasets
 ## Benchmark
 ### Environment
 * i9 12900kf
@@ -15,7 +18,7 @@
 {
     "categories": ["Science"]
 }
-* returns 110585 records in 325ms
+ returns 110585 records in 325ms
 ``
 
 
